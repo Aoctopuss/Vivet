@@ -1,0 +1,11 @@
+{
+    "products": [
+        { "id": 1, "name": "Essential Tee", "price": 45, "image": "public/images/essentials.webp" },
+        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
+        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
+        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
+        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
+        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
+        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" }
+    ]
+}
