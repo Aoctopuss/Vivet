@@ -9,11 +9,22 @@ export function inhCart() {
 }
 
 function saveToSession(id) {
-    let cart = JSON.parse(sessionStorage.getItem('userCart')) || [];
+    let cart = JSON.parse(localStorage.getItem('userCart')) || [];
+
+    const product = window.allProducts.find(p => p.id == id);
+
+    const existingItem = cart.find(item => item.id == id);
     
-    if (!cart.includes(id)) {
-        cart.push(id);
-        sessionStorage.setItem('userCart', JSON.stringify(cart));
-        console.log("Saved to session:", id);
+    if (existingItem) {
+
+        
+        existingItem.quantity += 1;
+        console.log("quanitity upated", existingItem.quantity);
+        
+    } else {    
+        cart.push({ ...product, quantity: 1});
     }
+
+    localStorage.setItem('userCart', JSON.stringify(cart));
+    console.log("Added to cart", product.name);
 }
