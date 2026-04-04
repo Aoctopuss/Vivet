@@ -43,5 +43,5 @@ https://www.figma.com/make/7UKb2yj0tg3Rjq2JMKgJsz/Streetwear-Webshop-Design?p=f&
 
 | Dag | Taak |
 |---|---|
-| 1–2 | Plan + HTML opzetten CSS styling JavaScript: API, producten, winkelwagen |
-| 2-3 | Bestellen + adminpagina, Testen |
+| 1–2 | Plan + HTML opzetten CSS styling JavaScript: API, producten |
+| 2-4 | winkelwagen, Bestellen + adminpagina, Testen |

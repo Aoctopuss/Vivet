@@ -1,11 +1,10 @@
 {
     "products": [
-        { "id": 1, "name": "Essential Tee", "price": 45, "image": "public/images/essentials.webp" },
+        { "id": 1, "name": "Essential Tee", "price": 45, "image": "public/images/essentials.png" },
         { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
-        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
-        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
-        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
-        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" },
-        { "id": 2, "name": "Hoodie", "price": 68, "image": "public/images/hoodie.webp" }
+        { "id": 3, "name": "Cargo Pants", "price": 89, "image": "public/images/cargo.webp" },
+        { "id": 4, "name": "Track Jacket", "price": 95, "image": "public/images/trackjacket.webp" },
+        { "id": 5, "name": "Graphic Crewneck", "price": 75, "image": "public/images/crew.webp" },
+        { "id": 6, "name": "Denim Jacket", "price": 120, "image": "public/images/denim.webp" }
     ]
 }
