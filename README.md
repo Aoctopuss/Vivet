@@ -65,6 +65,13 @@ code .
 
 ---
 
+### 5. Json server runnen op localhost:3000 
+
+in terminal
+```
+json-server --watch db.json
+```
+
 
 ---
 

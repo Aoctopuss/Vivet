@@ -2,6 +2,7 @@
 
 export function fetchProduct() {
     const display = document.querySelector("#display");
+    if (!display) return;
     fetch("http://localhost:3000/products")
         .then((resp) => resp.json())
         .then((data) => {

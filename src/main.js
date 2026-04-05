@@ -1,8 +1,12 @@
 import { fetchProduct } from './products.js'
-import { inhCart } from './cart.js';
+import { inhCart, DisplayCart, UpdateCartBadge} from './cart.js';
 
 inhCart();
 fetchProduct();
+UpdateCartBadge();
+
+const Savedcart = JSON.parse(localStorage.getItem('userCart')) || [];
+DisplayCart(Savedcart);
 
 
 
