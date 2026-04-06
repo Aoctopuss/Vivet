@@ -52,6 +52,7 @@ function saveToSession(id) {
 export function DisplayCart(cart) {
     const display = document.querySelector("#cart-items");
     const Nodisplay = document.querySelector("#cart-container");
+    const total = document.querySelector('#cart-total');
 
     if (!display || !Nodisplay) return;
 
@@ -59,8 +60,11 @@ export function DisplayCart(cart) {
         Nodisplay.innerHTML = `<p    class="text-gray-500 font-sm"> je winkelwagen is leeg.</p>`;
         return;
     }
+    let totalPrice = 0;
     display.innerHTML = "";
     cart.forEach((item) => {
+        let totalPriceIn  = item.price * item.quantity;
+        totalPrice += totalPriceIn
         display.innerHTML += `
                 <div class="flex justify-between items-start py-4 border-b">
                     <div>
@@ -68,29 +72,37 @@ export function DisplayCart(cart) {
                         <p class="text-gray-500 text-sm">€${item.price} × ${item.quantity}</p>
                     </div>
                     <div class="flex items-center gap-4">
-                        <p>€${item.price * item.quantity}</p>
+                        <p>€${totalPriceIn}</p>
                         <button data-id="${item.id}" class="remove-btn">✕</button>
                     </div>
                 </div>`;
     });
+    total.innerText = `€${totalPrice}`;
+
+    localStorage.setItem('totalPrice', totalPrice);
 }
 
 // bestellen
 
 document.addEventListener("click", (p) => {
     if (p.target.matches(".besteld")) {
+        localStorage.setItem("Date", Date.now());
         bestelling(p);
     }
 });
 
-export function bestelling(p) {
+export function bestelling(p) {  
     const display = document.querySelector("#cart-container");
     let cart = JSON.parse(localStorage.getItem("userCart")) || [];
-    let bestelling = cart;
-    cart = [];
-    display.innerHTML = `
-            <p class="font-bold text-3xl">Dankjewel voor je bestelling.</p>`;
-    localStorage.setItem("userBestelling", JSON.stringify(bestelling));
+    
+    if (cart.length === 0) return;
+
+    localStorage.setItem("userBestelling", JSON.stringify(cart));
+
+    localStorage.setItem("userCart", JSON.stringify([]));
+
+    display.innerHTML = `<p class="font-bold text-3xl">Dankjewel voor je bestelling.</p>`;
+    UpdateCartBadge();
 }
 
 // bestellen
@@ -111,6 +123,7 @@ function removeCart(a) {
 
     localStorage.setItem("userCart", JSON.stringify(cart));
     DisplayCart(cart);
+    
 }
 
 document.addEventListener("click", (e) => {
