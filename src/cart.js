@@ -91,7 +91,7 @@ document.addEventListener("click", (p) => {
     }
 });
 
-export function bestelling(p) {  
+function bestelling(p) {  
     const display = document.querySelector("#cart-container");
     let cart = JSON.parse(localStorage.getItem("userCart")) || [];
     
@@ -103,6 +103,7 @@ export function bestelling(p) {
 
     display.innerHTML = `<p class="font-bold text-3xl">Dankjewel voor je bestelling.</p>`;
     UpdateCartBadge();
+    console.log("Order has been placed");
 }
 
 // bestellen
@@ -123,7 +124,7 @@ function removeCart(a) {
 
     localStorage.setItem("userCart", JSON.stringify(cart));
     DisplayCart(cart);
-    
+    console.log("Function remove a cart ran succefully");
 }
 
 document.addEventListener("click", (e) => {
@@ -140,6 +141,7 @@ function removeFromCart(id) {
 
     localStorage.setItem("userCart", JSON.stringify(cart));
     DisplayCart(cart);
+    console.log("cart id removed");
 }
 
 // items verwijderen en de cart leegmaken

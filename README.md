@@ -65,6 +65,15 @@ code .
 
 ---
 
+### 5. Json server installeren
+
+in terminal 
+```
+npm install -g json-server
+```
+
+---
+
 ### 5. Json server runnen op localhost:3000 
 
 in terminal

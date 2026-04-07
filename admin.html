@@ -7,39 +7,107 @@
         <link rel="stylesheet" href="/public/style.css" />
     </head>
     <body class="bg-[#ffffff]">
-
         <div id="nav" class="flex justify-center mt-2 px-2 mb-5">
             <nav
                 class="flex items-center justify-between px-6 py-4 rounded-xl shadow-md shadow-purple-500/20 ring-1 ring-purple-500/20 w-full bg-[#0A0A0A] text-white"
             >
-                <a class="text-2xl text-[#E8E8E8] hover:text-[#00D4FF] ml-[150px]">Admin panel</a>
+                <a
+                    class="text-2xl text-[#E8E8E8] hover:text-[#00D4FF] ml-[150px]"
+                    >Admin panel</a
+                >
                 <div>
-                    <button type="button" class="text-white bg-[#00D4FF] rounded-lg border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Orders</button>
-                    <button type="button" class="text-heading bg-transparent rounded-lg box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">Products</button>
+                    <button
+                        id="buttonOrder"
+                        type="button"
+                        class="text-white bg-[#00D4FF] rounded-lg border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                    >
+                        Orders
+                    </button>
+                    <button
+                        id="buttonProducts"
+                        type="button"
+                        class="text-heading rounded-lg box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                    >
+                        Products
+                    </button>
                 </div>
-            </nav>
+            </nav>  
         </div>
 
-        <div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
-            <table class="w-full text-sm text-left rtl:text-right text-body">
-                <thead class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default">
-            <tr>
-                <th scope="col" class="px-6 py-3 font-medium">
-                    ID
-                </th>
-                <th scope="col" class="px-6 py-3 font-medium">
-                    Totaal
-                </th>
-                <th scope="col" class="px-6 py-3 font-medium">
-                    Datum en Tijd
-                </th>
-            </tr>
-        </thead>
-        <tbody id="displayOrder">
 
-        </tbody>
-            </table>
+        <!-- TABLES -->
+
+        <div id="tableOrder" class="hidden">
+            <div
+                class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
+            >
+                <table
+                    class="w-full text-sm text-left rtl:text-right text-body"
+                >
+                    <thead
+                        class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default"
+                    >
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                ID
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Totaal
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Datum en Tijd
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="displayOrder"></tbody>
+                </table>
+            </div>
         </div>
+        
+        <div id="tableProducts" class="hidden">
+            <div class="mb-2 flex items-center justify-around gap-200">
+    <button type="button" class="box-border border rounded-md border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none">Lees producten uit JSON</button>
+    <a href="addproducts.html">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+        </svg>
+    </a>
+</div>
+            <div
+                class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
+            >
+                <table
+                    class="w-full text-sm text-left rtl:text-right text-body"
+                >
+                    <thead
+                        class="text-sm text-body bg-neutral-secondary-soft border-b rounded-base border-default"
+                    >
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium"></th>
+                            <th scope="col" class="px-6 py-3 font-medium"></th>
+                            <th scope="col" class="px-6 py-3 font-medium"></th>
+                            <th scope="col" class="px-6 py-3 font-medium"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="displayProducts"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TABLES -->
+
+
 
     </body>
 
