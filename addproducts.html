@@ -38,16 +38,29 @@
 
         
 <form class="max-w-sm mx-auto space-y-4">
-    <a >Ga terug</a>
+    <a class="text-blue-400 underline hover:text-blue-700" href="admin.html">Ga terug</a>
     <h1 class="font-bold">Voeg product toe</h1>
     <div>
         <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Naam</label>
-        <input type="text" id="visitors" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-2.5 py-2 shadow-xs placeholder:text-body" placeholder="" required />
+        <input type="text" id="addName" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-2.5 py-2 shadow-xs placeholder:text-body" placeholder="" required />
     </div>
     <div>
-        <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Base Input</label>
-        <input type="text" id="visitors" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="" required />
+        <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Prijs</label>
+        <input type="text" id="addPrice" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="" required />
     </div>
+    <div>
+        <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Afbeelding</label>
+        <input type="text" id="addImage" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="" required />
+    </div>
+    <div class="mb-4">
+            <button
+                        id="addNewProduct"
+                        type="button"
+                        class="text-white bg-[#00D4FF] hover:bg-sky-900 rounded-lg border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                    >
+                        Voeg toe
+                    </button>
+            </div>
 </form>
 
 

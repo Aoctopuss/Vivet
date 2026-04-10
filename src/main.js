@@ -1,11 +1,16 @@
 import { fetchProduct } from './products.js'
 import { inhCart, DisplayCart, UpdateCartBadge} from './cart.js';
-import { displayBestelling, switching} from './admin.js';
+import { displayBestelling, switching, deleteRow, editRow, displayandEditProduct, saveChanges, createNewProduct} from './admin.js';
 
 inhCart();
 fetchProduct();
 UpdateCartBadge();
 switching();
+deleteRow();
+editRow();
+saveChanges();
+createNewProduct();
+displayandEditProduct();
 if (document.querySelector("#displayOrder")) {
     console.log("Admin element found! Running function...");
     displayBestelling();

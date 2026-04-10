@@ -8,13 +8,13 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-green-800: oklch(44.8% 0.119 151.328);
+    --color-cyan-400: oklch(78.9% 0.154 211.53);
+    --color-sky-900: oklch(39.1% 0.09 240.876);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-blue-800: oklch(42.4% 0.199 265.638);
-    --color-blue-900: oklch(37.9% 0.146 265.522);
+    --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-purple-500: oklch(62.7% 0.265 303.9);
     --color-purple-600: oklch(55.8% 0.288 302.321);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
@@ -25,8 +25,6 @@
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
@@ -222,9 +220,6 @@
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
-  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -236,6 +231,9 @@
   }
   .mb-2\.5 {
     margin-bottom: calc(var(--spacing) * 2.5);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
@@ -281,6 +279,9 @@
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-full {
     width: 100%;
   }
@@ -322,15 +323,6 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-  .gap-20 {
-    gap: calc(var(--spacing) * 20);
-  }
-  .gap-100 {
-    gap: calc(var(--spacing) * 100);
-  }
-  .gap-150 {
-    gap: calc(var(--spacing) * 150);
   }
   .gap-200 {
     gap: calc(var(--spacing) * 200);
@@ -394,9 +386,6 @@
   .bg-purple-600 {
     background-color: var(--color-purple-600);
   }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -415,9 +404,6 @@
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
-  .px-3\.5 {
-    padding-inline: calc(var(--spacing) * 3.5);
-  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
@@ -432,9 +418,6 @@
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-  .py-3\.5 {
-    padding-block: calc(var(--spacing) * 3.5);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
@@ -465,10 +448,6 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -507,8 +486,14 @@
   .text-black {
     color: var(--color-black);
   }
+  .text-blue-400 {
+    color: var(--color-blue-400);
+  }
   .text-blue-500 {
     color: var(--color-blue-500);
+  }
+  .text-cyan-400 {
+    color: var(--color-cyan-400);
   }
   .text-gray-500 {
     color: var(--color-gray-500);
@@ -566,10 +551,10 @@
       }
     }
   }
-  .hover\:bg-blue-800 {
+  .hover\:bg-sky-900 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-blue-800);
+        background-color: var(--color-sky-900);
       }
     }
   }
@@ -587,13 +572,6 @@
       }
     }
   }
-  .hover\:text-\[\#01313a\] {
-    &:hover {
-      @media (hover: hover) {
-        color: #01313a;
-      }
-    }
-  }
   .hover\:text-\[\#480000\] {
     &:hover {
       @media (hover: hover) {
@@ -601,45 +579,10 @@
       }
     }
   }
-  .hover\:text-\[\#\] {
+  .hover\:text-blue-700 {
     &:hover {
       @media (hover: hover) {
-        color: #;
-      }
-    }
-  }
-  .hover\:text-\[\#ff0000\] {
-    &:hover {
-      @media (hover: hover) {
-        color: #ff0000;
-      }
-    }
-  }
-  .hover\:text-blue-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-800);
-      }
-    }
-  }
-  .hover\:text-blue-900 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-blue-900);
-      }
-    }
-  }
-  .hover\:text-green-800 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-green-800);
-      }
-    }
-  }
-  .hover\:text-white {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white);
+        color: var(--color-blue-700);
       }
     }
   }
