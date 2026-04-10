@@ -2,31 +2,41 @@ export function displayBestelling() {
     const bestelling = JSON.parse(localStorage.getItem("userBestelling"));
     const totalPrice = localStorage.getItem("totalPrice");
     const time = localStorage.getItem("Date");
-    const bestellingTime = new Date(Number(time)).toLocaleString();
     const display = document.querySelector("#displayOrder");
-
-    console.log("Data found:", bestelling);
-    console.log("Display element:", display);
 
     if (!bestelling || !display) return;
 
+    let allOrders = JSON.parse(localStorage.getItem("all_orders")) || [];
+
+    if (!allOrders.some(order => order.date === time)) {
+        allOrders.push({
+            id: allOrders.length,
+            bestelling,
+            totalPrice,
+            date: time
+        });
+        localStorage.setItem("all_orders", JSON.stringify(allOrders));
+    }
+
     display.innerHTML = "";
 
-    bestelling.forEach((producten) => {
+    allOrders.forEach(order => {
         display.innerHTML += `
-            <tr class="bg-neutral-primary border-b border-default">
-                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
-                    ${producten.id}
-                </th>
-                <td class="px-6 py-4">
-                    €${totalPrice}
-                </td>
-                <td class="px-6 py-4">
-                    ${bestellingTime}
-                </td>
-            </tr>`;
+        <tr class="bg-neutral-primary border-b border-default">
+            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                ${order.id}
+            </th>
+            <td class="px-6 py-4">
+                ${order.bestelling.map(p => `${p.quantity}x ${p.name}`).join("<br>")}
+            </td>
+            <td class="px-6 py-4 font-bold">
+                €${order.totalPrice}
+            </td>
+            <td class="px-6 py-4">
+                ${new Date(Number(order.date)).toLocaleString()}
+            </td>
+        </tr>`;
     });
-    console.log("Function is running");
 }
 
 export function switching() {
