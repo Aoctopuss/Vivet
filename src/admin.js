@@ -35,23 +35,20 @@ export function switching() {
     const tableOrder = document.querySelector("#tableOrder");
     const tableProducts = document.querySelector("#tableProducts");
 
-    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts)
-        return;
+    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts) return;
+    fetchProductsAdmin();
 
     buttonProducts.addEventListener("click", () => {
         tableProducts.classList.remove("hidden");
         tableOrder.classList.add("hidden");
-
         buttonProducts.classList.add("bg-[#00D4FF]");
         buttonOrder.classList.remove("bg-[#00D4FF]");
-
         fetchProductsAdmin();
     });
 
     buttonOrder.addEventListener("click", () => {
         tableOrder.classList.remove("hidden");
         tableProducts.classList.add("hidden");
-
         buttonOrder.classList.add("bg-[#00D4FF]");
         buttonProducts.classList.remove("bg-[#00D4FF]");
     });
@@ -141,7 +138,7 @@ export function displayandEditProduct() {
     const product = JSON.parse(localStorage.getItem("product")) || [];
     const display = document.querySelector("#dispayingEdit");
 
-    if (!display) return;
+    if (!display || product) return;
 
     display.innerHTML = `
         <form class="max-w-sm mx-auto space-y-4">
@@ -179,9 +176,9 @@ document.addEventListener("click", (e) => {
         fetch("http://localhost:3000/products")
             .then(resp => resp.json())
             .then(data => {
-                localStorage.setItem('products', JSON.stringify(data));
-                renderProductTable();
-            })
+                localStorage.setItem("products", JSON.stringify(data));
+                renderProductTable(data);
+            });
     }
 });
 
@@ -238,3 +235,4 @@ export function createNewProduct() {
         window.location.href = "admin.html";
     });
 }
+

@@ -14,7 +14,7 @@ export function UpdateCartBadge() {
         amount.innerText = total;
     } else if (total > 10) {
         amount.classList.remove("hidden");
-        amount.innerText = `10+`;A
+        amount.innerText = `10+`;
     }
 }
 
