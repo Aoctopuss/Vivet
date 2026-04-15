@@ -76,8 +76,8 @@ function fetchProductsAdmin() {
         fetch("https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json")
             .then((resp) => resp.json())
             .then((data) => {
-                localStorage.setItem("products", JSON.stringify(data));
-                renderProductTable(data);
+                localStorage.setItem("products", JSON.stringify(data.products));
+                renderProductTable(data.products);
             });
     } else {
         renderProductTable(saved);
@@ -206,8 +206,8 @@ document.addEventListener("click", (e) => {
         fetch("https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json")
             .then((resp) => resp.json())
             .then((data) => {
-                localStorage.setItem("products", JSON.stringify(data));
-                renderProductTable(data);
+                localStorage.setItem("products", JSON.stringify(data.products));
+                renderProductTable(data.products);
             });
     }
 });

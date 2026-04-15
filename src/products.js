@@ -7,8 +7,8 @@ export default function fetchProduct() {
         fetch("https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json")
             .then(resp => resp.json())
             .then(data => {
-                localStorage.setItem("products", JSON.stringify(data));
-                displayProducts(data);
+                localStorage.setItem("products", JSON.stringify(data.products));
+                displayProducts(data.products);
             });
     } else {
         displayProducts(saved);
