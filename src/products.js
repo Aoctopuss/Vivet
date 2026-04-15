@@ -1,4 +1,4 @@
-export function fetchProduct() {
+export default function fetchProduct() {
     const display = document.querySelector("#display");
     if (!display) return;
     const saved = JSON.parse(localStorage.getItem("products"));
