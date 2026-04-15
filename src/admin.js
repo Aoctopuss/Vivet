@@ -45,8 +45,7 @@ export function switching() {
     const tableOrder = document.querySelector("#tableOrder");
     const tableProducts = document.querySelector("#tableProducts");
 
-    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts)
-        return;
+    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts) return;
     fetchProductsAdmin();
 
     buttonProducts.addEventListener("click", () => {
@@ -160,22 +159,29 @@ export function displayandEditProduct() {
             <h1 class="font-bold">Edit product</h1>
             <div>
                 <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Naam</label>
-                <input placeholder="${product.name}" type="text" id="edit-name" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-2.5 py-2 shadow-xs placeholder:text-body" required />
+                <input placeholder="${product.name}" type="text" id="edit-name" 
+                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base 
+                focus:ring-brand focus:border-brand block w-full px-2.5 py-2 shadow-xs placeholder:text-body" required />
             </div>
             <div>
                 <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Prijst</label>
-                <input placeholder="${product.price}" type="text" id="edit-price" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" required />
+                <input placeholder="${product.price}" type="text" id="edit-price" 
+                class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm 
+                rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" required />
             </div>
             <div>
                 <label for="visitors" class="block mb-2.5 text-sm font-medium text-heading">Afbeelding</label>
-                <input placeholder="${product.image}" type="text" id="edit-image" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" required />
+                <input placeholder="${product.image}" type="text" id="edit-image" 
+                class="bg-neutral-secondary-medium border border-default-medium 
+                text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" required />
                 <img src=${product.image}>
             </div>
             <div class="mb-4">
             <button
                         id="SaveChanges"
                         type="button"
-                        class="text-white bg-[#00D4FF] hover:bg-sky-900 rounded-lg border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                        class="text-white bg-[#00D4FF] hover:bg-sky-900 rounded-lg
+                        border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
                         edit
                     </button>
