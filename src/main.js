@@ -1,4 +1,4 @@
-import { fetchProduct } from "./products.js";
+import fetchProduct from "./products.js";
 import { inhCart, DisplayCart, UpdateCartBadge } from "./cart.js";
 import {
     displayBestelling,
