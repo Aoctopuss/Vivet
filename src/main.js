@@ -1,6 +1,14 @@
-import { fetchProduct } from './products.js'
-import { inhCart, DisplayCart, UpdateCartBadge} from './cart.js';
-import { displayBestelling, switching, deleteRow, editRow, displayandEditProduct, saveChanges, createNewProduct} from './admin.js';
+import { fetchProduct } from "./products.js";
+import { inhCart, DisplayCart, UpdateCartBadge } from "./cart.js";
+import {
+    displayBestelling,
+    switching,
+    deleteRow,
+    editRow,
+    displayandEditProduct,
+    saveChanges,
+    createNewProduct,
+} from "./admin.js";
 
 inhCart();
 fetchProduct();
@@ -16,10 +24,8 @@ if (document.querySelector("#displayOrder")) {
     displayBestelling();
 }
 
-const Savedcart = JSON.parse(localStorage.getItem('userCart')) || [];
+const Savedcart = JSON.parse(localStorage.getItem("userCart")) || [];
 DisplayCart(Savedcart);
-
-
 
 // navbar animation for scrolling
 window.addEventListener("scroll", () => {

@@ -8,26 +8,26 @@ export function displayBestelling() {
 
     let allOrders = JSON.parse(localStorage.getItem("all_orders")) || [];
 
-    if (!allOrders.some(order => order.date === time)) {
+    if (!allOrders.some((order) => order.date === time)) {
         allOrders.push({
             id: allOrders.length,
             bestelling,
             totalPrice,
-            date: time
+            date: time,
         });
         localStorage.setItem("all_orders", JSON.stringify(allOrders));
     }
 
     display.innerHTML = "";
 
-    allOrders.forEach(order => {
+    allOrders.forEach((order) => {
         display.innerHTML += `
         <tr class="bg-neutral-primary border-b border-default">
             <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
                 ${order.id}
             </th>
             <td class="px-6 py-4">
-                ${order.bestelling.map(p => `${p.quantity}x ${p.name}`).join("<br>")}
+                ${order.bestelling.map((p) => `${p.quantity}x ${p.name}`).join("<br>")}
             </td>
             <td class="px-6 py-4 font-bold">
                 €${order.totalPrice}
@@ -45,7 +45,8 @@ export function switching() {
     const tableOrder = document.querySelector("#tableOrder");
     const tableProducts = document.querySelector("#tableProducts");
 
-    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts) return;
+    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts)
+        return;
     fetchProductsAdmin();
 
     buttonProducts.addEventListener("click", () => {
@@ -67,15 +68,15 @@ export function switching() {
 function fetchProductsAdmin() {
     const displayProducts = document.querySelector("#displayProducts");
     if (!displayProducts) return;
-    
+
     displayProducts.innerHTML = "";
-    
+
     const saved = JSON.parse(localStorage.getItem("products"));
-    
+
     if (!saved) {
         fetch("http://localhost:3000/products")
-            .then(resp => resp.json())
-            .then(data => {
+            .then((resp) => resp.json())
+            .then((data) => {
                 localStorage.setItem("products", JSON.stringify(data));
                 renderProductTable(data);
             });
@@ -183,12 +184,11 @@ export function displayandEditProduct() {
         `;
 }
 
-
 document.addEventListener("click", (e) => {
     if (e.target.matches("#reset")) {
         fetch("http://localhost:3000/products")
-            .then(resp => resp.json())
-            .then(data => {
+            .then((resp) => resp.json())
+            .then((data) => {
                 localStorage.setItem("products", JSON.stringify(data));
                 renderProductTable(data);
             });
@@ -199,18 +199,20 @@ export function saveChanges() {
     document.addEventListener("click", (e) => {
         if (e.target.matches("#SaveChanges")) {
             const product = JSON.parse(localStorage.getItem("product"));
-            const newName = document.querySelector("#edit-name").value || product.name;
-            const newPrice = document.querySelector("#edit-price").value || product.price;
-            const newImage = document.querySelector("#edit-image").value || product.image;
+            const newName =
+                document.querySelector("#edit-name").value || product.name;
+            const newPrice =
+                document.querySelector("#edit-price").value || product.price;
+            const newImage =
+                document.querySelector("#edit-image").value || product.image;
 
             product.name = newName;
             product.price = newPrice;
             product.image = newImage;
 
-
             let products = JSON.parse(localStorage.getItem("products")) || [];
-            const index = products.findIndex(p => p.id == product.id);
-            
+            const index = products.findIndex((p) => p.id == product.id);
+
             if (index !== -1) {
                 products[index] = product;
                 localStorage.setItem("products", JSON.stringify(products));
@@ -233,13 +235,16 @@ export function createNewProduct() {
         const addPrice = document.querySelector("#addPrice").value;
         const addImage = document.querySelector("#addImage").value;
 
-        const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+        const newId =
+            products.length > 0
+                ? Math.max(...products.map((p) => p.id)) + 1
+                : 1;
 
         const newProduct = {
             id: newId,
             name: addName,
             price: addPrice,
-            image: addImage
+            image: addImage,
         };
 
         products.push(newProduct);
@@ -248,4 +253,3 @@ export function createNewProduct() {
         window.location.href = "admin.html";
     });
 }
-

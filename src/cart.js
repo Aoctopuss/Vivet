@@ -8,7 +8,7 @@ export function UpdateCartBadge() {
 
     if (total === 0) {
         amount.classList.add("hidden");
-        amount.innerHTML = ""; 
+        amount.innerHTML = "";
     } else if (total > 0 && total <= 10) {
         amount.classList.remove("hidden");
         amount.innerText = total;
@@ -52,7 +52,7 @@ function saveToSession(id) {
 export function DisplayCart(cart) {
     const display = document.querySelector("#cart-items");
     const Nodisplay = document.querySelector("#cart-container");
-    const total = document.querySelector('#cart-total');
+    const total = document.querySelector("#cart-total");
 
     if (!display || !Nodisplay) return;
 
@@ -63,8 +63,8 @@ export function DisplayCart(cart) {
     let totalPrice = 0;
     display.innerHTML = "";
     cart.forEach((item) => {
-        let totalPriceIn  = item.price * item.quantity;
-        totalPrice += totalPriceIn
+        let totalPriceIn = item.price * item.quantity;
+        totalPrice += totalPriceIn;
         display.innerHTML += `
                 <div class="flex justify-between items-start py-4 border-b">
                     <div>
@@ -79,7 +79,7 @@ export function DisplayCart(cart) {
     });
     total.innerText = `€${totalPrice}`;
 
-    localStorage.setItem('totalPrice', totalPrice);
+    localStorage.setItem("totalPrice", totalPrice);
 }
 
 // bestellen
@@ -91,10 +91,10 @@ document.addEventListener("click", (p) => {
     }
 });
 
-function bestelling(p) {  
+function bestelling(p) {
     const display = document.querySelector("#cart-container");
     let cart = JSON.parse(localStorage.getItem("userCart")) || [];
-    
+
     if (cart.length === 0) return;
 
     localStorage.setItem("userBestelling", JSON.stringify(cart));
@@ -107,7 +107,6 @@ function bestelling(p) {
 }
 
 // bestellen
-
 
 // items verwijderen en de cart leegmaken
 
