@@ -88,7 +88,7 @@ function renderProductTable(data) {
     window.allProducts = data;
     const displayProducts = document.querySelector("#displayProducts");
     displayProducts.innerHTML = "";
-    data.forEach(product => {
+    data.forEach((product) => {
         displayProducts.innerHTML += `
         <tr class="bg-neutral-primary border-b border-default">
             <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
@@ -98,7 +98,7 @@ function renderProductTable(data) {
                 ${product.name}
             </td>
             <td class="px-6 py-4">
-                ${product.price}
+                €${product.price}
             </td>
             <td class="px-6 py-4">
                 ${product.image}
@@ -117,7 +117,9 @@ export function editRow() {
     document.addEventListener("click", (e) => {
         if (e.target.matches(".edit-row")) {
             const productId = e.target.dataset.id;
-            const fullProduct = window.allProducts.find((p) => p.id == productId);
+            const fullProduct = window.allProducts.find(
+                (p) => p.id == productId,
+            );
             if (fullProduct) {
                 localStorage.setItem("product", JSON.stringify(fullProduct));
                 window.location.href = "edit-product.html";
@@ -135,8 +137,9 @@ export function deleteRow() {
             if (row) {
                 row.remove();
 
-                let products = JSON.parse(localStorage.getItem("products")) || [];
-                products = products.filter(p => p.id != productId);
+                let products =
+                    JSON.parse(localStorage.getItem("products")) || [];
+                products = products.filter((p) => p.id != productId);
                 localStorage.setItem("products", JSON.stringify(products));
                 console.log("Row removed");
             }
@@ -148,7 +151,7 @@ export function displayandEditProduct() {
     const product = JSON.parse(localStorage.getItem("product")) || [];
     const display = document.querySelector("#dispayingEdit");
 
-    if (!display || product) return;
+    if (!display || !product) return;
 
     display.innerHTML = `
         <form class="max-w-sm mx-auto space-y-4">
