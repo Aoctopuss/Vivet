@@ -4,7 +4,7 @@ export default function fetchProduct() {
     const saved = JSON.parse(localStorage.getItem("products"));
 
     if (!saved) {
-        fetch("http://localhost:3000/products")
+        fetch("https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json")
             .then(resp => resp.json())
             .then(data => {
                 localStorage.setItem("products", JSON.stringify(data));
