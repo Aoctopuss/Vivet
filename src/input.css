@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @source "../src/main.js";
+
+
+@theme {
+    --color-black: #0A0A0A;
+    --color-purple: #6B21A8;
+    --color-purple-hover: #7C3AED;
+    --color-card: #121212;
+}

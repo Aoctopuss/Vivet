@@ -104,10 +104,10 @@ function renderProductTable(data) {
                 ${product.image}
             </td>
             <td>
-                <button data-id="${product.id}" class="edit-row text-blue-500 hover:text-[#010a3a]">Edit</button>
+                <button data-id="${product.id}" class="edit-row text-blue-500 hover:text-blue-950">Edit</button>
             </td>
             <td>
-                <button data-id="${product.id}" class="remove-row text-red-500 hover:text-[#480000]">Remove</button>
+                <button data-id="${product.id}" class="remove-row text-red-500 hover:text-red-950">Remove</button>
             </td>
         </tr>`;
     });
@@ -169,7 +169,7 @@ export function displayandEditProduct() {
             <div>
                 <label for="visitors" class="block mb-2.5 text-sm font-medium 
                 text-heading">Prijst</label>
-                <input placeholder="${product.price}" type="text" id="edit-price" 
+                <input placeholder="${product.price}" type="number" id="edit-price" 
                 class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm 
                 rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs 
                 placeholder:text-body" required />
@@ -269,4 +269,9 @@ export function createNewProduct() {
         console.log("added new product", newProduct);
         window.location.href = "admin.html";
     });
+}
+
+
+export function inputChecker() {
+
 }

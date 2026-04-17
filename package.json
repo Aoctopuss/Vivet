@@ -9,7 +9,8 @@
   "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./public/style.css --watch"
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./public/style.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/style.css --minify"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.2.2",

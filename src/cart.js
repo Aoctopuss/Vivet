@@ -124,6 +124,7 @@ function removeCart(a) {
     localStorage.setItem("userCart", JSON.stringify(cart));
     DisplayCart(cart);
     console.log("Function remove a cart ran succefully");
+    UpdateCartBadge();
 }
 
 document.addEventListener("click", (e) => {
@@ -141,6 +142,7 @@ function removeFromCart(id) {
     localStorage.setItem("userCart", JSON.stringify(cart));
     DisplayCart(cart);
     console.log("cart id removed");
+    UpdateCartBadge();
 }
 
 // items verwijderen en de cart leegmaken
