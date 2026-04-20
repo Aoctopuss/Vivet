@@ -21,7 +21,7 @@ Een moderne webshop voor kleding, gebouwd als eindproject van het developer-traj
 
 ## Vereisten
 
-- je hebt niks nodig om dit project de draaien je kan gewoon naar vivvet.vercel.app gaan om dit product te bekijken.
+- je hebt niks nodig om dit project de draaien je kan gewoon naar [Vivet](https://vivvet.vercel.app) gaan om dit product te bekijken.
 
 ---
 
