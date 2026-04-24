@@ -44,7 +44,8 @@ export function switching() {
     const tableOrder = document.querySelector("#tableOrder");
     const tableProducts = document.querySelector("#tableProducts");
 
-    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts) return;
+    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts)
+        return;
     fetchProductsAdmin();
 
     buttonProducts.addEventListener("click", () => {
@@ -72,7 +73,9 @@ function fetchProductsAdmin() {
     const saved = JSON.parse(localStorage.getItem("products"));
 
     if (!saved) {
-        fetch("https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json")
+        fetch(
+            "https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json",
+        )
             .then((resp) => resp.json())
             .then((data) => {
                 localStorage.setItem("products", JSON.stringify(data.products));
@@ -202,7 +205,9 @@ export function displayandEditProduct() {
 
 document.addEventListener("click", (e) => {
     if (e.target.matches("#reset")) {
-        fetch("https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json")
+        fetch(
+            "https://raw.githubusercontent.com/Aoctopuss/Vivet/refs/heads/main/db.json",
+        )
             .then((resp) => resp.json())
             .then((data) => {
                 localStorage.setItem("products", JSON.stringify(data.products));
@@ -269,7 +274,6 @@ export function createNewProduct() {
     });
 }
 
-
 export function validatePrice(value) {
     const price = Number(value);
     if (price < 0) {
@@ -282,7 +286,7 @@ export function validatePrice(value) {
 document.addEventListener("change", (e) => {
     if (e.target.matches("#addPrice") || e.target.matches("#edit-price")) {
         const isValid = validatePrice(e.target.value);
-        
+
         if (!isValid) {
             e.target.value = 0;
         }
