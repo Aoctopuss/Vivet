@@ -25,6 +25,7 @@ if (document.querySelector("#displayOrder")) {
     console.log("Admin element found! Running function...");
     displayBestelling();
 }
+
 const Savedcart = JSON.parse(localStorage.getItem("userCart")) || [];
 DisplayCart(Savedcart);
 
