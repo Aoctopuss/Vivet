@@ -8,8 +8,10 @@ import {
     displayandEditProduct,
     saveChanges,
     createNewProduct,
+    validatePrice,
 } from "./admin.js";
 
+validatePrice();
 inhCart();
 fetchProduct();
 UpdateCartBadge();
@@ -66,3 +68,5 @@ document.addEventListener("click", (e) => {
             
         }
 });
+
+

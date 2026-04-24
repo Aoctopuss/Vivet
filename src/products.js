@@ -26,7 +26,7 @@ function displayProducts(data) {
                 <img src="${product.image}" class="w-full h-[350px] object-contain rounded-t-sm"/>
                 <div class="p-3 bg-purple">
                     <p class="text-2xl font-semibold text-white">${product.name}</p>
-                    <p class="text-sm font-semibold pt-3 text-white">€${product.price}</p>
+                    <p class="text-sm font-semibold pt-3 text-white">€${Number(product.price).toFixed(2)}</p>
                 </div>
                 <button data-id="${product.id}" class="add-to-cart add hover:bg-purple-hover bg-purple 
                 hover:text-sky-400 text-white w-full rounded-b-sm p-3 text-sm font-semibold">Add to cart</button>

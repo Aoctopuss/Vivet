@@ -30,7 +30,7 @@ export function displayBestelling() {
                 ${order.bestelling.map((p) => `${p.quantity}x ${p.name}`).join("<br>")}
             </td>
             <td class="px-6 py-4 font-bold">
-                €${order.totalPrice}
+                €${Number(order.totalPrice).toFixed(2)}
             </td>
             <td class="px-6 py-4">
                 ${new Date(Number(order.date)).toLocaleString()}
@@ -98,7 +98,7 @@ function renderProductTable(data) {
                 ${product.name}
             </td>
             <td class="px-6 py-4">
-                €${product.price}
+                €${Number(product.price).toFixed(2)}
             </td>
             <td class="px-6 py-4">
                 ${product.image}
@@ -169,7 +169,7 @@ export function displayandEditProduct() {
             <div>
                 <label for="visitors" class="block mb-2.5 text-sm font-medium 
                 text-heading">Prijst</label>
-                <input placeholder="${product.price}" type="number" id="edit-price" 
+                <input placeholder="${Number(product.price).toFixed(2)}" type="number" min="0" id="edit-price" 
                 class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm 
                 rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs 
                 placeholder:text-body" required />
@@ -194,7 +194,7 @@ export function displayandEditProduct() {
                         shadow-xs font-medium leading-5 rounded-base text-sm 
                         px-4 py-2.5 focus:outline-none"
                     >
-                        edit
+                        Save
                     </button>
             </div>
         </form>
@@ -236,7 +236,6 @@ export function saveChanges() {
             }
 
             localStorage.setItem("product", JSON.stringify(product));
-            window.location.href = "admin.html";
             console.log("Product updated", product);
         }
     });
@@ -272,6 +271,21 @@ export function createNewProduct() {
 }
 
 
-export function inputChecker() {
-
+export function validatePrice(value) {
+    const price = Number(value);
+    if (price < 0) {
+        alert("Prijs mag niet negatief zijn!");
+        return false;
+    }
+    return true;
 }
+
+document.addEventListener("change", (e) => {
+    if (e.target.matches("#addPrice") || e.target.matches("#edit-price")) {
+        const isValid = validatePrice(e.target.value);
+        
+        if (!isValid) {
+            e.target.value = 0;
+        }
+    }
+});

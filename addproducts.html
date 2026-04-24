@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>admin-add-products</title>
-        <link rel="stylesheet" href="/public/style.css" />
+        <link rel="stylesheet" href="public/style.css" />
     </head>
     <body class="bg-[#ffffff]">
         <div id="nav" class="flex justify-center mt-2 px-2 mb-5">
@@ -14,7 +14,7 @@
                 <a href="admin.html"
                     class="text-2xl text-white hover:text-sky-300 ml-[150px]"
                     >Admin panel</a
-                >
+                >   
                 <div>
                     <button
                         id="buttonOrder"
@@ -46,7 +46,7 @@
     </div>
     <div>
         <label class="block mb-2.5 text-sm font-medium text-heading">Prijs</label>
-        <input type="number" id="addPrice" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="" required />
+        <input type="number" min="0" id="addPrice" class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" placeholder="" required />
     </div>
     <div>
         <label class="block mb-2.5 text-sm font-medium text-heading">Afbeelding</label>
@@ -66,6 +66,6 @@
 
 
 
-<script type="module" src="/src/main.js"></script>
+<script type="module" src=" src/main.js"></script>
     </body>
 </html>

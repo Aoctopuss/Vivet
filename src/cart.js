@@ -57,7 +57,12 @@ export function DisplayCart(cart) {
     if (!display || !Nodisplay) return;
 
     if (cart.length === 0) {
-        Nodisplay.innerHTML = `<p    class="text-gray-500 font-sm"> je winkelwagen is leeg.</p>`;
+        Nodisplay.innerHTML = `<p    class="text-gray-500 font-sm"> je winkelwagen is leeg.</p>
+        <a href="index.html">
+            <button class="mt-6 px-8 py-3 bg-purple-700 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-purple-700/40 hover:shadow-purple-500/50  hover:text-sky-400 transition-all duration-300">
+                Verder winkelen →
+            </button>
+        </a>`;
         return;
     }
     let totalPrice = 0;
@@ -69,15 +74,15 @@ export function DisplayCart(cart) {
                 <div class="flex justify-between items-start py-4 border-b">
                     <div>
                         <p class="font-semibold">${item.name}</p>
-                        <p class="text-gray-500 text-sm">€${item.price} × ${item.quantity}</p>
+                        <p class="text-gray-500 text-sm">€${Number(item.price).toFixed(2)} × ${item.quantity}</p>
                     </div>
                     <div class="flex items-center gap-4">
-                        <p>€${totalPriceIn}</p>
+                        <p>€${Number(totalPriceIn).toFixed(2)}</p>
                         <button data-id="${item.id}" class="remove-btn">✕</button>
                     </div>
                 </div>`;
     });
-    total.innerText = `€${totalPrice}`;
+    total.innerText = `€${totalPrice.toFixed(2)}`;
 
     localStorage.setItem("totalPrice", totalPrice);
 }
@@ -101,7 +106,13 @@ function bestelling(p) {
 
     localStorage.setItem("userCart", JSON.stringify([]));
 
-    display.innerHTML = `<p class="font-bold text-3xl">Dankjewel voor je bestelling.</p>`;
+    display.innerHTML = `
+    <p class="font-bold text-3xl text-white">Dankjewel voor je bestelling.</p>
+    <a href="index.html">
+        <button class="mt-6 px-8 py-3 bg-purple-700 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-purple-700/40 hover:shadow-purple-500/50  hover:text-sky-400 transition-all duration-300">
+            Verder winkelen →
+        </button>
+    </a>`;
     UpdateCartBadge();
     console.log("Order has been placed");
 }
