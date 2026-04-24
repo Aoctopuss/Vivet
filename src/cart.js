@@ -60,7 +60,8 @@ export function DisplayCart(cart) {
         Nodisplay.innerHTML = `<p    class="text-gray-500 font-sm"> je winkelwagen is leeg.</p>
         <a href="index.html">
             <button class="mt-6 px-8 py-3 bg-purple-700 hover:bg-purple-500 text-white 
-                font-semibold rounded-lg shadow-lg shadow-purple-700/40 hover:shadow-purple-500/50  hover:text-sky-400 transition-all duration-300">
+                font-semibold rounded-lg shadow-lg shadow-purple-700/40 hover:shadow-purple-500/50  
+                hover:text-sky-400 transition-all duration-300">
                 Verder winkelen →
             </button>
         </a>`;
@@ -111,7 +112,8 @@ function bestelling(p) {
     <p class="font-bold text-3xl text-white">Dankjewel voor je bestelling.</p>
     <a href="index.html">
         <button class="mt-6 px-8 py-3 bg-purple-700 hover:bg-purple-500 text-white 
-            font-semibold rounded-lg shadow-lg shadow-purple-700/40 hover:shadow-purple-500/50  hover:text-sky-400 transition-all duration-300">
+            font-semibold rounded-lg shadow-lg shadow-purple-700/40 hover:shadow-purple-500/50  
+            hover:text-sky-400 transition-all duration-300">
             Verder winkelen →
         </button>
     </a>`;
