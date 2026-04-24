@@ -57,16 +57,13 @@ document.addEventListener("click", (e) => {
 
         notification.classList.add("not-empty");
 
-            notification.innerHTML = `
-            <div class="bg-black mt-2 w-64 h-24 border rounded-md top-2 absolute flex items-center font-semibold px-4 text-center shadow-lg">
-                <p class="text-white text-sm">Je hebt een product toegevoegd aan de winkelwagen</p>
-            </div>`;
-            setTimeout(() => {
-                notification.innerHTML = "";
-                notification.classList.remove("not-empty");
-            }, 2000);
-            
-        }
+        notification.innerHTML = `
+        <div class="bg-black mt-2 w-64 h-24 border rounded-md top-2 absolute flex items-center font-semibold px-4 text-center shadow-lg">
+            <p class="text-white text-sm">Je hebt een product toegevoegd aan de winkelwagen</p>
+        </div>`;
+        setTimeout(() => {
+            notification.innerHTML = "";
+            notification.classList.remove("not-empty");
+        }, 2000);
+    }
 });
-
-

@@ -25,7 +25,7 @@ export function displayBestelling() {
         <tr class="bg-neutral-primary border-b border-default">
             <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
                 ${order.id}
-            </th>
+                </th>
             <td class="px-6 py-4">
                 ${order.bestelling.map((p) => `${p.quantity}x ${p.name}`).join("<br>")}
             </td>
