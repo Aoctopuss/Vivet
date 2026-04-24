@@ -44,8 +44,7 @@ export function switching() {
     const tableOrder = document.querySelector("#tableOrder");
     const tableProducts = document.querySelector("#tableProducts");
 
-    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts)
-        return;
+    if (!buttonOrder || !buttonProducts || !tableOrder || !tableProducts) return;
     fetchProductsAdmin();
 
     buttonProducts.addEventListener("click", () => {
