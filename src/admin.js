@@ -50,16 +50,16 @@ export function switching() {
     buttonProducts.addEventListener("click", () => {
         tableProducts.classList.remove("hidden");
         tableOrder.classList.add("hidden");
-        buttonProducts.classList.add("bg-[#00D4FF]");
-        buttonOrder.classList.remove("bg-[#00D4FF]");
+        buttonProducts.classList.add("bg-sky-400");
+        buttonOrder.classList.remove("bg-sky-400");
         fetchProductsAdmin();
     });
 
     buttonOrder.addEventListener("click", () => {
         tableOrder.classList.remove("hidden");
         tableProducts.classList.add("hidden");
-        buttonOrder.classList.add("bg-[#00D4FF]");
-        buttonProducts.classList.remove("bg-[#00D4FF]");
+        buttonOrder.classList.add("bg-sky-400");
+        buttonProducts.classList.remove("bg-sky-400");
     });
 }
 

@@ -19,14 +19,14 @@
                     <button
                         id="buttonOrder"
                         type="button"
-                        class="text-white bg-sky-400 rounded-lg border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                        class="text-white rounded-lg border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
                         Orders
                     </button>
                     <button
                         id="buttonProducts"
                         type="button"
-                        class="text-heading rounded-lg box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+                        class="text-heading rounded-lg bg-sky-400 box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
                     >
                         Products
                     </button>
@@ -37,7 +37,7 @@
 
         <!-- TABLES -->
 
-        <div id="tableOrder">
+        <div id="tableOrder" class="hidden">
             <div
                 class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default"
             >
@@ -67,7 +67,7 @@
             </div>
         </div>
         
-        <div id="tableProducts" class="hidden">
+        <div id="tableProducts" class="">
             <div class="mb-2 flex items-center justify-around gap-200">
     <button type="button" id="reset" class="box-border border rounded-md border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none">Reset Producten</button>
     <a href="addproducts.html">
