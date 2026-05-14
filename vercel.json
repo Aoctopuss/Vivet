@@ -1,7 +1,5 @@
 {
-  "outputDirectory": "."
-}
-{
+  "outputDirectory": ".",
   "redirects": [
     { "source": "/github", "destination": "https://github.com/Aoctopuss", "permanent": false }
   ]
